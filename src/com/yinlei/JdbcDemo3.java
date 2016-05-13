@@ -18,12 +18,13 @@ public class JdbcDemo3 {
 	public static void main(String[] args) throws Exception {
 
 		// 连接地址
-		String url = "jdbc:mysql://localhost:3306/mydb";
+		String url = "";
 		// 用户名
-		String name = "root";
+		String name = "";
 		// 密码
-		String pwd = "root";
+		String pwd = "";
 
+		//我们要在src/目录下创建一个.properties文件
 		Properties pro = new Properties();
 		InputStream is = JdbcDemo3.class.getClassLoader().getResourceAsStream("dbcof.properties");
 		pro.load(is);

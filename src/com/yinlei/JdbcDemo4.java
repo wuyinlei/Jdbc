@@ -5,9 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
-import org.w3c.dom.css.RGBColor;
-
 /**
  * 
  * 曾删改查
@@ -32,16 +29,17 @@ public class JdbcDemo4 {
 		// String sql = "DELETE from stu where id = 12";
 		// int i = stmt.executeUpdate(sql);
 		// System.out.println("改变的条目：" + i);
-		//String sql = "select id 编码,name 姓名  from stu";
+		//String sql = "select id 编码,name 姓名  from stu";   第一种
 		String sql = "select * from stu";
 
 		ResultSet rs = stmt.executeQuery(sql);
 		// 5、输出结果集的数据
 
 		while (rs.next()) {
+			
 			// System.out.println("id :" + rs.getInt("id") + " name :" +
 			// rs.getString("name"));
-			// 第一种根据字段名查找
+			// 第一种根据字段名查找   对应//String sql = "select id 编码,name 姓名  from stu";   第一种
 			// int id = rs.getInt("编码"); //
 			// String name = rs.getString("姓名");
 			// int age = rs.getInt("age");
@@ -49,7 +47,7 @@ public class JdbcDemo4 {
 			// System.out.println("id :" + id + " name :" + name);
 			// System.out.println("id :" + id + " name :" + name + " age :" +
 			// age + " addr " + addr);
-
+ 
 			// 第二种是根据字段的索引 是结果集的序号(下标从 1 开始)
 			// int id = rs.getInt(1);
 			// String name = rs.getString(2);

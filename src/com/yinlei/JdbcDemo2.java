@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import com.mysql.jdbc.Driver;
+
 /**
  * 三种方式注册驱动
  * 
@@ -13,15 +15,33 @@ import java.sql.Statement;
  */
 public class JdbcDemo2 {
 
-	private static String url = "jdbc:mysql://localhost:3306/mydb";
-	private static String name = "root";
-	private static String pwd = "root";
-
 	public static void main(String[] args) throws Exception {
+		// 连接地址
+		String url = "jdbc:mysql://localhost:3306/mydb";
+		// 用户名
+		String name = "root";
+		// 密码
+		String pwd = "root";
 		// 1、注册驱动
+		// Class.forName("com.mysql.jdbc.Driver");
+		/**
+		 * 第一种注册方式
+		 */
+		// Driver driver = new Driver();
+		// DriverManager.registerDriver(driver);
 
-		// 1、注册驱动
+		/**
+		 * 第二种方式 反射机制
+		 */
+		// Driver driver = (Driver)
+		// Class.forName("com.mysql.jdbc.Driver").newInstance();
+		// DriverManager.registerDriver(driver);
+
+		/**
+		 * 第三种注册方式
+		 */
 		Class.forName("com.mysql.jdbc.Driver");
+
 		// 2、创建一个连接对象
 		Connection conn = DriverManager.getConnection(url, name, pwd);
 		// 3、创建一个sql语句发送的命令对象

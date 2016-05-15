@@ -1,9 +1,11 @@
-package com.yinlei;
+package com.yinlei.jdbc;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Types;
+
+import com.yinlei.utils.JdbcUtils;
 
 /**
  * 演示JDBC调用存储过程
@@ -68,7 +70,6 @@ public class ProcedureTest {
 		try {
 			testPro();
 			testPro1();
-			System.out.println("tiaodd");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

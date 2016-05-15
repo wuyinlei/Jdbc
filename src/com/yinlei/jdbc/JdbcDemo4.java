@@ -1,4 +1,4 @@
-package com.yinlei;
+package com.yinlei.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

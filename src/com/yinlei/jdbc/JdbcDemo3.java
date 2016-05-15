@@ -1,4 +1,4 @@
-package com.yinlei;
+package com.yinlei.jdbc;
 
 import java.io.InputStream;
 import java.sql.Connection;
